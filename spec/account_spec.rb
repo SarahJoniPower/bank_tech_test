@@ -47,12 +47,20 @@ describe Account do
     it 'should add a deposit to the transaction history array' do
       account = Account.new
       account.deposit(1000, '10-01-2012')
-      expect(account.deposit(1000, '10-01-2012')).to_not eq []
+      expect(account.transaction_history).to_not eq []
     end
   
     it 'should add a withdrawal to the transaction history array' do
       account = Account.new
-      expect(account.withdrawal(500, '14-01-2012')).to_not eq []
+      account.withdrawal(500, '14-01-2012')
+      expect(account.transaction_history).to_not eq []
+    end
+
+    it 'should add multiple instances of transaction to the transaction history array' do
+      account = Account.new
+      account.deposit(1000, '10-01-2012')
+      account.withdrawal(500, '14-01-2012') 
+      expect(account.transaction_history.length).to eq 2
     end
   end
 end
