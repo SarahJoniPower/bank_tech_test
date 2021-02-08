@@ -36,4 +36,17 @@ describe Account do
       expect(account.balance).to eq 500
     end 
   end
+
+  describe '#transaction_history' do
+    it 'should initialize with a transaction history empty array' do
+      account = Account.new
+      expect(account.transaction_history).to eq []
+    end
+
+    it 'should add a deposit to the transaction history array' do
+      account = Account.new
+      account.deposit(1000)
+      expect(account.transaction_history).to eq [1000]
+    end
+  end
 end

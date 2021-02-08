@@ -2,16 +2,17 @@ require './transaction.rb'
 
 class Account 
 
-  attr_reader :balance
+  attr_reader :balance, :transaction_history
 
   def initialize 
     @balance = 0
-    # @transation_history = []
+    @transaction_history = []
     # @transaction = Transaction.new
   end 
 
   def deposit(amount)
     @balance += amount
+    @transaction_history.push(amount)
   end
 
   def withdrawal(amount)
@@ -21,8 +22,7 @@ class Account
 #   def statement
 #   end 
 
-
-#   def add_to_history(transation)
-#   end 
+  # def add_to_history(transation)
+  # end 
 
 end 
