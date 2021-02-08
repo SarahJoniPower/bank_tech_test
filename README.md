@@ -7,7 +7,7 @@ You can:
 (account = Account.new)
 - check your balance:   account.balance 
 - deposit money:        account.deposit(amount)
-- withdraw money:       account.withdraw(amount)        
+- withdrawal money:     account.withdrawal(amount)        
 - print a statement     account.statement
 
 An account statement contains a list of recent transations in reverse order with details of: 

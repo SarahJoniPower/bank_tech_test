@@ -10,11 +10,13 @@ class Account
     # @transaction = Transaction.new
   end 
 
-#   def deposit(amount)
-#   end
+  def deposit(amount)
+    @balance += amount
+  end
 
-#   def withdraw(amount)
-#   end
+  def withdrawal(amount)
+    @balance -= amount
+  end
 
 #   def statement
 #   end 
