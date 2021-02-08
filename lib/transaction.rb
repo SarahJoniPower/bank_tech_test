@@ -1,5 +1,6 @@
+
 class Transaction 
-  attr_accessor :date, :credit, :debit, :balance
+  attr_accessor :date, :credit
 
   def initialize
     @date

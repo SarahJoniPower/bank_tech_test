@@ -1,4 +1,5 @@
 require 'account'
+require 'transaction'
 
 describe Account do
 
@@ -46,27 +47,12 @@ describe Account do
     it 'should add a deposit to the transaction history array' do
       account = Account.new
       account.deposit(1000, '10-01-2012')
-      expect(account.transaction_history).to eq [{credit: 1000, date: '10-01-2012'}]
+      expect(account.deposit(1000, '10-01-2012')).to_not eq []
     end
   
-    it 'should add a deposit and a withdrawal to the transaction history array' do
+    it 'should add a withdrawal to the transaction history array' do
       account = Account.new
-      account.deposit(1000, '10-01-2012')
-      account.withdrawal(500, '14-01-2012') 
-      expect(account.transaction_history).to eq [
-        {credit: 1000, date: '10-01-2012'}, 
-        {debit: 500, date: '14-01-2012'}]
-    end
-  end
-
-  describe '#statement' do
-    it 'should return the transaction history' do
-      account = Account.new
-      account.deposit(1000, '10-01-2012')
-      account.withdrawal(500, '14-01-2012') 
-      expect(account.statement).to eq [
-        {credit: 1000, date: '10-01-2012'}, 
-        {debit: 500, date: '14-01-2012'}]
+      expect(account.withdrawal(500, '14-01-2012')).to_not eq []
     end
   end
 end

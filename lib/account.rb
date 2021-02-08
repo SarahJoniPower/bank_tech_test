@@ -12,10 +12,10 @@ class Account
 
   def deposit(amount, date)
     @balance += amount
-    # @transaction.credit = amount
-    # @transaction.date = date
-    # @transaction_history.push(@transaction)
-    @transaction_history.push({credit: amount, date: date})
+    @transaction.credit = amount
+    @transaction.date = date
+    @transaction_history.push(@transaction)
+    # @transaction_history.push({credit: amount, date: date})
   end
 
   def withdrawal(amount, date)
@@ -24,7 +24,10 @@ class Account
   end
 
   def statement
-    @transaction_history
+    puts 'date || credit || debit || balance'
+    statement = @transaction_history.map do |transaction|
+    puts "#{transaction.date} || #{transaction.credit}"
+    end
   end
 
   # def add_to_history(transation)
