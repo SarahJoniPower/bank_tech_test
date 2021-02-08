@@ -1,13 +1,14 @@
-#Bank Tech Test 
+# Bank Tech Test 
 
 This programme models a bank account. It's written in ruby and you can interact with the code through irb. 
 
 You can:
 
-- check your balance:   Bank.balance 
-- desposit money:       Bank.deposit(amount)
-- withdraw money:       Bank.withdraw(amount)        
-- print a statement     Bank.account_statement
+(account = Account.new)
+- check your balance:   account.balance 
+- deposit money:        account.deposit(amount)
+- withdraw money:       account.withdraw(amount)        
+- print a statement     account.statement
 
 An account statement contains a list of recent transations in reverse order with details of: 
     - date
@@ -17,7 +18,7 @@ An account statement contains a list of recent transations in reverse order with
 
 
 Plan
-My initial thoughts are this will involve two classes - a bank class, and a transation class, which will be used to create the list of transations. 
+My initial thoughts are this will involve two classes - an account class, and a transation class, which will be used to create the account statement. 
 
 Questions to consider: should methods be called on the full class or on an instance of the class?
 
