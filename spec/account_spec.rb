@@ -58,4 +58,15 @@ describe Account do
         {debit: 500, date: '14-01-2012'}]
     end
   end
+
+  describe '#statement' do
+    it 'should return the transaction history' do
+      account = Account.new
+      account.deposit(1000, '10-01-2012')
+      account.withdrawal(500, '14-01-2012') 
+      expect(account.statement).to eq [
+        {credit: 1000, date: '10-01-2012'}, 
+        {debit: 500, date: '14-01-2012'}]
+    end
+  end
 end
