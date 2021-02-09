@@ -61,7 +61,7 @@ describe Account do
     it 'should display a string of the history of the accounts transactions' do
       allow(Time).to receive(:now).and_return(DateTime.parse("2012-01-10 11:08:22 +0000"))
       account.deposit(1000)
-      expect { account.statement }.to output("date || credit || debit || balance\n10/01/2012 || 1000 ||  || 1000\n").to_stdout
+      expect { account.statement }.to output("date || credit || debit || balance\n10/01/2012 || 1000.00 ||  || 1000.00\n").to_stdout
     end
   end
 end
