@@ -16,10 +16,10 @@ An account statement contains a list of recent transations in reverse order with
     - debit
     - balance
 
-
-Plan
-My initial thoughts are this will involve two classes - an account class, and a transation class, which will be used to create the account statement. 
-
-Questions to consider: should methods be called on the full class or on an instance of the class?
-
-I'll use rspec to test, simplecov to check I have good test coverage and rubocop to check my code is neat.
+Things left to do:
+- refractor out the transactions from deposit and withdrawal.
+- make a helper for rsepc tests and also use more mocks and doubles?
+- need to work on the dependency injection 
+- the formatting of the dates and numbers in the statement
+- testing for the transactions class
+- testing for the statement method 

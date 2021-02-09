@@ -64,11 +64,11 @@ describe Account do
     end
   end
 
-  # describe '#statement' do
-    # it 'should display a string of the history of the accounts transactions' do
-    #   account = Account.new
-    #   account.deposit(1000, '10-01-2012')
-    #   expect(account.statement).to output "10-01-2012"
-  #   end
-  # end
+  describe '#statement' do
+    it 'should display a string of the history of the accounts transactions' do
+      account = Account.new
+      account.deposit(1000, '10-01-2012')
+      expect { account.statement }.to output("date || credit || debit || balance\n10-01-2012 || 1000 ||  || 1000\n").to_stdout
+    end
+  end
 end
