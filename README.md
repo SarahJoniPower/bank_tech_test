@@ -22,4 +22,3 @@ Things left to do:
 - need to work on the dependency injection 
 - the formatting of the dates and numbers in the statement
 - testing for the transactions class
-- testing for the statement method 
