@@ -9,17 +9,15 @@ class Account
     @transaction_history = []
   end 
 
-  def deposit(amount)
-    @balance += amount
-    credit = format(amount)
-    transaction = Transaction.new(credit: credit, date: get_date, debit: nil, balance: @balance)
+  def deposit(credit)
+    @balance += credit
+    transaction = Transaction.new(credit: format(credit), date: get_date, debit: nil, balance: @balance)
     @transaction_history.push(transaction)
   end
 
-  def withdrawal(amount)
-    @balance -= amount
-    debit = format(amount)
-    transaction = Transaction.new(credit: nil, date: get_date, debit: debit, balance: @balance)
+  def withdrawal(debit)
+    @balance -= debit
+    transaction = Transaction.new(credit: nil, date: get_date, debit: format(debit), balance: @balance)
     @transaction_history.push(transaction)
   end
 
@@ -30,11 +28,6 @@ class Account
     end
   end
 
-  # def add_to_history(transation)
-  #   transaction = Transaction.new(credit: nil, date: get_date, debit: debit, balance: @balance)
-  #   @transaction_history.push(transaction)
-  # end 
-
   def format(amount)
     sprintf('%.2f', amount)
   end
@@ -42,5 +35,4 @@ class Account
   def get_date
     Time.now.strftime "%d/%m/%Y"
   end
-
 end 
