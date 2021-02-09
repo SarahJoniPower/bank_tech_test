@@ -17,6 +17,6 @@ An account statement contains a list of recent transations in reverse order with
     - debit
     - balance
 
-Things left to do:
-- need to work on the dependency injection
-- potentially a balance method?
+Notes and Questions
+- Thinking about dependency injection - do I need to be creating an instance of Transaction in the initialize of Account instead? Couldn't work out if this was needed/ how to do it.
+- if I'm getting a coverage of 100% from SimpleCov, is there value in continuing to write out tests for things like edge cases? 

@@ -4,7 +4,7 @@ require 'transaction'
 describe Account do
   let(:account) { Account.new }
 
-  it 'should be an instance of the Bank class' do
+  it 'should be an instance of the Account class' do
     expect(subject).to be_instance_of Account
   end
 
@@ -62,6 +62,12 @@ describe Account do
       allow(Time).to receive(:now).and_return(DateTime.parse("2012-01-10 11:08:22 +0000"))
       account.deposit(1000)
       expect { account.print_statement }.to output("date || credit || debit || balance\n10/01/2012 || 1000.00 ||  || 1000.00\nend of statement\n").to_stdout
+    end
+  end
+
+  describe '#format(amount)' do
+    it 'should format the amount value to 2 decimal places' do
+      expect(account.format(1000)).to eq "1000.00"
     end
   end
 end
