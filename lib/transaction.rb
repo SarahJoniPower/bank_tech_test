@@ -1,5 +1,4 @@
-
-class Transaction 
+class Transaction
   attr_accessor :date, :credit, :debit, :balance
 
   def initialize(credit:, date:, debit:, balance:)
@@ -7,5 +6,5 @@ class Transaction
     @credit = credit
     @debit = debit
     @balance = balance
-  end 
-end 
+  end
+end
