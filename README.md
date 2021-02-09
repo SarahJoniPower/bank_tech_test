@@ -17,6 +17,9 @@ An account statement contains a list of recent transations in reverse order with
     - debit
     - balance
 
+To run the tests: move into the project directory and in the terminal run: rspec
+
 Notes and Questions
 - Thinking about dependency injection - do I need to be creating an instance of Transaction in the initialize of Account instead? Couldn't work out if this was needed/ how to do it.
-- if I'm getting a coverage of 100% from SimpleCov, is there value in continuing to write out tests for things like edge cases? 
+- If I'm getting a coverage of 100% from SimpleCov, is there value in continuing to write out tests for things like edge cases?
+- I think I should have refactored out creating a transaction and pushing it into the transaction_history array from the deposit and withdrawal methods - but couldn't work out how/ wasn't totally sure it was a good idea. 
