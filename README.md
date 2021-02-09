@@ -17,8 +17,7 @@ An account statement contains a list of recent transations in reverse order with
     - balance
 
 Things left to do:
-- refractor out the transactions from deposit and withdrawal.
+- refractor out the transactions from deposit and withdrawal and also the formatting.
 - make a helper for rsepc tests and also use more mocks and doubles?
-- need to work on the dependency injection 
-- the formatting of the dates and numbers in the statement
+- need to work on the dependency injection
 - testing for the transactions class
